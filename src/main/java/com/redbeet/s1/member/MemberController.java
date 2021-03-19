@@ -14,10 +14,7 @@ public class MemberController {
 	private MemberService memberService;
 	//memberJoin이라는 메서드. print로 확인. url : /member/memberLogin.do
 
-	@RequestMapping(value="member/memberJoin")
-	private String memberJoin() {
-		return "member/memberJoin";
-	}
+
 
 
 	@RequestMapping(value="member/memberJoin", method= RequestMethod.POST)
@@ -33,25 +30,6 @@ public class MemberController {
 
 
 
-
-
-	@RequestMapping(value="member/memberLogin") 
-	public String memberLogin(String name, int age) {
-		System.out.println(name);
-		System.out.println(age);
-		return "member/memberLogin";
-	}
-
-	@RequestMapping(value="member/memberLogin", method = RequestMethod.POST)
-	public void memberLogin2(HttpServletRequest request) throws Exception {
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		MemberDTO memberDTO = new MemberDTO();
-		memberDTO.setId(id);
-		memberDTO.setPw(pw);
-		memberDTO = memberService.memberLogin(memberDTO);
-		System.out.println(memberDTO);
-	}
 
 	//memberLogin2 print
 	@RequestMapping(value = "/member/memberLogin", method = RequestMethod.POST)
