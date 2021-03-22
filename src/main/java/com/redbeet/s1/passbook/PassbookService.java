@@ -11,6 +11,7 @@ public class PassbookService {
 	@Autowired
 	private PassbookDAO passbookDAO;
 	
+	
 	public List<PassbookDTO> getList() throws Exception {
 		List<PassbookDTO> ar = passbookDAO.getList();
 		return ar;
