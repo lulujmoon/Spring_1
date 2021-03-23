@@ -1,4 +1,4 @@
-package com.redbeet.s1.passbook;
+package com.redbeet.s3.passbook;
 
 import java.util.List;
 
@@ -11,9 +11,11 @@ public class PassbookService {
 	@Autowired
 	private PassbookDAO passbookDAO;
 	
+	public PassbookDTO getSelect(PassbookDTO passbookDTO) throws Exception {
+		return passbookDAO.getSelect(passbookDTO);
+	}
 	
 	public List<PassbookDTO> getList() throws Exception {
-		List<PassbookDTO> ar = passbookDAO.getList();
-		return ar;
+		return passbookDAO.getList();
 	}
 }

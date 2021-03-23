@@ -1,4 +1,4 @@
-package com.redbeet.s1.passbook;
+package com.redbeet.s3.passbook;
 
 public class PassbookDTO {
 	
